@@ -97,43 +97,14 @@
                         </table>
                         <div class="scroll-wrapper">
                             <div class="scrollbar-dynamic">
-                                <table class="table list-box">
-                                  <tr class="active">
-                                      <td>MGM Casino Suite 1 m</td>
-                                      <td class="text-center w30">12.03.2019</td>
+                                <table class="table list-box" id="artworks">
+                                  <tr v-for="artwork in info">
+                                      <td>{{ artwork.name }}</td>
+                                      <td class="text-center w30">{{ artwork.changedate }}</td>
                                   </tr> 
-                                  <tr>
-                                      <td>MGM Casino Suite 1 m</td>
-                                      <td class="text-center">12.03.2019</td>
-                                  </tr> 
-                                  <tr>
-                                      <td>MGM Casino Suite 1 m</td>
-                                      <td class="text-center">12.03.2019</td>
-                                  </tr> 
-                                  <tr>
-                                      <td>MGM Casino Suite 1 m</td>
-                                      <td class="text-center">12.03.2019</td>
-                                  </tr> 
-                                  <tr>
-                                      <td>MGM Casino Suite 1 m</td>
-                                      <td class="text-center">12.03.2019</td>
-                                  </tr> 
-                                  <tr>
-                                      <td>MGM Casino Suite 1 m</td>
-                                      <td class="text-center">12.03.2019</td>
-                                  </tr> 
-                                  <tr>
-                                      <td>MGM Casino Suite 1 m</td>
-                                      <td class="text-center">12.03.2019</td>
-                                  </tr> 
-                                  <tr>
-                                      <td>MGM Casino Suite 1 m</td>
-                                      <td class="text-center">12.03.2019</td>
-                                  </tr> 
-                                  <tr>
-                                      <td>MGM Casino Suite 1 m</td>
-                                      <td class="text-center">12.03.2019</td>
-                                  </tr> 
+                                  
+                                  
+                                  
                                 </table>
                             </div>
                         </div>
@@ -264,6 +235,8 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
     <script src="js/icheck.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
@@ -274,6 +247,24 @@
       });
 
     </script>
-
+    <script type = "text/javascript">
+      new Vue({
+      el: '#artworks',
+      data () {
+          return {
+          info: null
+          }
+      },
+      mounted () {
+          axios
+          .get('../data.json')
+          .then(response => (this.info = response.data.artworks))
+          .catch(function (error) { // 请求失败处理
+              console.log(error);
+          });
+      }
+      })
+    </script>
+   
   </body>
 </html>
