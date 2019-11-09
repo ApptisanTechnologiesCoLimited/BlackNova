@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/icheck.css">
+
+    <title>My Artworks - Black Novas</title>
+  </head>
+  <body>
+        <div class="header relative">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Brand</a>
+                    <button type="button" class="navbar-toggle visible-xs" data-toggle="modal" data-target="#right-menu">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                  </div>
+              
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                      <li><a href="#">ANY </a></li>
+                      <li><a href="#">ALBA</a></li>
+                      <li><a href="#">ARIA</a></li>
+                     
+                    </ul>
+                    
+                     <button type="button" class="navbar-toggle pull-right mr-15" data-toggle="modal" data-target="#right-menu">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                     <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Get Black Nova </a></li>
+                        <li><a href="#">Create your keypad </a></li>
+                        <li class="ml"><a href="#">Mr Jones </a></li>
+                      </ul>
+                  </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+            <!-- Right Bar Menu -->
+            <div class="modal fade" id="right-menu" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <p class="text-right">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </p>
+                    <div class="prl70 pt100">
+                        <ul class="list-unstyled menu font20">
+                            <li><a href="#">DOWNLOAD</a> </li>
+                            <li><a href="#">CONTACT</a> </li>
+                            <li><a href="#">NEWS</a> </li>
+                            <li><a href="#">ABOUT</a> </li>
+                            <hr>
+                            <li><a href="#">ACCOUNT SETTINGS</a> </li>
+                            <li><a href="#">LOG OUT</a> </li>
+                          </ul>
+                    </div>
+                    
+                    
+                    
+                  </div>
+                </div>
+              </div>
+
+        </div>
+        <div class="content login middle" id="artworks">
+          <div class="cell">
+              <div class="container">
+                  <div class="row">
+                      <p class="font30 text-center">MY ARTWORKS</p>
+                      <div class="col-xs-12 mb20">
+                        <a href="">
+                          <span class="iconfont icon-add button-icon mr20"></span>
+                          <span class="font18 black">Add a new artwork</span>
+                        </a>
+                        
+                      </div>
+                      <div class="col-sm-7 col-xs-12">
+                        
+                        <table class="table mb0">
+                          <tr>
+                            <th>Name</th>
+                            <th class="text-center w30">Latest change</th>
+                          </tr>
+                        </table>
+                        <div class="scroll-wrapper">
+                            <div class="scrollbar-dynamic">
+                                <table class="table list-box">
+                                  <tr v-for="artwork in info" @click="operate(artwork)">
+                                      <td>{{ artwork.name }}</td>
+                                      <td class="text-center w30">{{ artwork.changedate }}</td>
+                                  </tr> 
+                                  
+                                  
+                                  
+                                </table>
+                            </div>
+                        </div>
+
+                        <p class="text-center mt30">
+                          <span class="text-super">Scroll down to see more</span> <br>
+                          <span class="iconfont icon-jiantou_down font30 animate-bounce-down"></span>
+                        </p>
+                        
+                      </div>
+
+                      <div class="col-sm-5 col-xs-12 text-center" id="showArtwork">
+                        <img src="images/pic1.jpg" alt="">
+                        <div class="mt50 font11">
+                            Model: ALBA 4, General, York Black Glass Buttons + Silver Metal Frame, Crestnet
+                        </div>
+                        <div class="mt50">
+                            <a class="black mr20" href="#" >Open</a>
+                            <a class="black" data-toggle="modal" data-target="#edit"><span class="iconfont icon-edit font18"></span></a>
+                            <a class="black" href="#"><span class="iconfont icon-copy font18"></span></a>
+                            <a class="black" data-toggle="modal" data-target="#delete"><span class="iconfont icon-delete font18"></span></a>
+                        </div>
+                      </div>
+                  </div>
+                 
+                </div>
+          </div>
+          
+        </div>
+       
+        <div class="sub-footer font10 mt30">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="hidden">Interior images <br>are provided by Sivak+Partners.</div> 
+              </div>
+              <div class="col-sm-4 text-center">All rights reserved - Black Nova© - 2019 | Legal</div>
+              <div class="col-sm-4 text-right font13">
+                  <div class="hidden">
+                      <a class="black" href="#"><span class="iconfont icon-instagram"></span></a>
+                      <a class="black" href="#"><span class="iconfont icon-Facebook"></span></a>
+                      <a class="black" href="#"><span class="iconfont icon-twitter"></span></a>
+                      <a class="black" href="#"><span class="iconfont icon-linkedin font18"></span></a>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal" id="edit" tabindex="-1" role="dialog" aria-labelledby="" data-backdrop="static">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+             
+              <div class="modal-body">
+                <p class="font18 text-center">EDIT ARTWORK</p>
+                <div class="row">
+                  <div class="col-sm-8 col-sm-offset-2">
+                     <table class="table mt30 font12">
+                       <tr>
+                         <td>Name</td>
+                         <td><input type="text" class="form-control" value="MGM Casino Suite 1 m" id="artworkName"></td>
+                       </tr>
+                       <tr>
+                        <td class="text-middle">Product</td>
+                        <td class="text-right">ALBA 4 General Purpose + Socket (Double Frame)</td>
+                      </tr>
+                      <tr>
+                        <td class="text-middle">Unique ID</td>
+                        <td class="text-right">999999</td>
+                      </tr>
+                      <tr>
+                        <td class="text-middle">Communication protocol</td>
+                        <td class="text-right text-middle">
+                          <input type="text" class="form-control" value="Cresnet" id="communication"/>
+                        </td>
+                      </tr>
+                    </table>
+                    <div class="mt50 text-center">
+                      <div class="row mlr0">
+                        <div class="col-sm-4 prl7">
+                           <button type="button" class="ebutton">OK</button>
+                        </div>
+                        <div class="col-sm-4 prl7">
+                            <button type="button" class="ebutton">Change design</button>
+                        </div>
+                        <div class="col-sm-4 prl7">
+                            <button type="button" data-dismiss="modal" aria-label="Close" class="ebutton">Cancel</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+            </div>
+          </div>
+        </div>
+
+        <div class="modal" id="delete" tabindex="-1" role="dialog" aria-labelledby="" data-backdrop="static">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+               
+                <div class="modal-body">
+                  <p class="font18 text-center">DELETE ARTWORK</p>
+                  <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                       <p class="mt30 text-center font15">Are you sure you want to delete “ALBA 13” ?</p>
+                      <div class="mt50 text-center">
+                        <div class="row mlr0">
+                        
+                          <div class="col-sm-offset-2 col-sm-4 prl7">
+                             <button type="button" class="ebutton">OK</button>
+                          </div>
+                          
+                          <div class="col-sm-4 prl7">
+                              <button type="button" data-dismiss="modal" aria-label="Close" class="ebutton">Cancel</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+            </div>
+          </div>
+        
+    
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+    <script src="js/icheck.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/scrollbar.min.js"></script>
+    <script>
+      jQuery(document).ready(function(){
+          jQuery('.scrollbar-dynamic').scrollbar();
+      });
+
+    </script>
+    <script type = "text/javascript">
+      new Vue({
+      el: '#artworks',
+      data () {
+          return {
+          info: null
+          }
+      },
+      mounted () {
+          axios
+          .get('../data.json')
+          .then(response => (this.info = response.data.artworks))
+          .catch(function (error) { // 请求失败处理
+              console.log(error);
+          });
+      },
+      methods: {
+        operate (artwork) {
+          
+        }
+      }
+
+    })
+  </script>
+   
+  </body>
+</html>
