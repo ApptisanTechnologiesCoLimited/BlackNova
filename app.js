@@ -9,5 +9,4 @@ app.get('/artworks', (req, res) => res.send(data.artworks))
 
 
 
-
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
