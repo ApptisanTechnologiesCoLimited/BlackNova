@@ -75,7 +75,7 @@
               </div>
 
         </div>
-        <div class="content login middle">
+        <div class="content login middle" id="artworks">
           <div class="cell">
               <div class="container">
                   <div class="row">
@@ -97,8 +97,8 @@
                         </table>
                         <div class="scroll-wrapper">
                             <div class="scrollbar-dynamic">
-                                <table class="table list-box" id="artworks">
-                                  <tr v-for="artwork in info">
+                                <table class="table list-box">
+                                  <tr v-for="artwork in info" @click="operate(artwork)">
                                       <td>{{ artwork.name }}</td>
                                       <td class="text-center w30">{{ artwork.changedate }}</td>
                                   </tr> 
@@ -115,7 +115,8 @@
                         </p>
                         
                       </div>
-                      <div class="col-sm-5 col-xs-12 text-center">
+
+                      <div class="col-sm-5 col-xs-12 text-center" id="showArtwork">
                         <img src="images/pic1.jpg" alt="">
                         <div class="mt50 font11">
                             Model: ALBA 4, General, York Black Glass Buttons + Silver Metal Frame, Crestnet
@@ -262,9 +263,15 @@
           .catch(function (error) { // 请求失败处理
               console.log(error);
           });
+      },
+      methods: {
+        operate (artwork) {
+          
+        }
       }
-      })
-    </script>
+
+    })
+  </script>
    
   </body>
 </html>

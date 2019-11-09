@@ -1,7 +1,7 @@
 {
 "artworks":[
-    {"id":"001","name":"Artwork A", "product":"An sample artwork ","protocol":"cresnet","changedate":"2019-11-7"},
-    {"id":"002","name":"Artwork B", "product":"An sample artwork ","protocol":"cresnet","changedate":"2019-11-9"}
+    {"id":"001","name":"Artwork A", "product":"An sample artwork ","protocol":"cresnet","changedate":"2019-11-7","img":"images/pic1.jpg"},
+    {"id":"002","name":"Artwork B", "product":"An sample artwork ","protocol":"cresnet","changedate":"2019-11-9","img":"images/pic2.jpg"}
 
     
 ]
