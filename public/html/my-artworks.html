@@ -98,11 +98,10 @@
                         <div class="scroll-wrapper">
                             <div class="scrollbar-dynamic">
                                 <table class="table list-box">
-                                  <tr v-for="artwork in info" @click="operate(artwork)">
-                                      <td>{{ artwork.name }}</td>
-                                      <td class="text-center w30">{{ artwork.changedate }}</td>
+                                  <tr v-for="(i, index) in info" @click='zan(index)' :key="index">
+                                      <td>{{ i.name }}</td>
+                                      <td class="text-center w30">{{ i.changedate }}</td>
                                   </tr> 
-                                  
                                   
                                   
                                 </table>
@@ -116,10 +115,10 @@
                         
                       </div>
 
-                      <div class="col-sm-5 col-xs-12 text-center" id="showArtwork">
-                        <img src="images/pic1.jpg" alt="">
+                      <div class="col-sm-5 col-xs-12 text-center" v-if="current">
+                        <img :src="current.img" alt="">
                         <div class="mt50 font11">
-                            Model: ALBA 4, General, York Black Glass Buttons + Silver Metal Frame, Crestnet
+                          {{ current.product }}
                         </div>
                         <div class="mt50">
                             <a class="black mr20" href="#" >Open</a>
@@ -166,7 +165,7 @@
                      <table class="table mt30 font12">
                        <tr>
                          <td>Name</td>
-                         <td><input type="text" class="form-control" value="MGM Casino Suite 1 m" id="artworkName"></td>
+                         <td><input type="text" class="form-control" @value="current.name"></td>
                        </tr>
                        <tr>
                         <td class="text-middle">Product</td>
@@ -211,7 +210,7 @@
                   <p class="font18 text-center">DELETE ARTWORK</p>
                   <div class="row">
                     <div class="col-sm-8 col-sm-offset-2">
-                       <p class="mt30 text-center font15">Are you sure you want to delete “ALBA 13” ?</p>
+                       <p class="mt30 text-center font15">Are you sure you want to delete “{{ current.name }}” ?</p>
                       <div class="mt50 text-center">
                         <div class="row mlr0">
                         
@@ -236,7 +235,7 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.js"></script>
     <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
     <script src="js/icheck.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -253,22 +252,27 @@
       el: '#artworks',
       data () {
           return {
-          info: null
+          info: null,
+          current: null
           }
-      },
+        },
       mounted () {
           axios
-          .get('../data.json')
-          .then(response => (this.info = response.data.artworks))
+          .get('../../data.json')
+          .then(response => (
+            this.info = response.data.artworks,
+            this.current = this.info[0]
+            ))
           .catch(function (error) { // 请求失败处理
               console.log(error);
           });
-      },
-      methods: {
-        operate (artwork) {
           
-        }
-      }
+        },
+      methods: {
+        zan(index){
+              this.current = this.info[index]
+              }
+          }
 
     })
   </script>
