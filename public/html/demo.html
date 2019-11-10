@@ -8,16 +8,15 @@
 
 <body>
         <div id="app">
-               
-            <div v-for="artwork in info" @click='zan(artwork)' :data-id='artwork'>
-                {{ artwork.id }}:{{ artwork.name }}:{{ artwork.product }}:{{ artwork.protocol }}:{{ artwork.changedate }}
+            
+            <div v-for="(i, index) in info" @click='zan(index)' :key="index">
+                 {{ i.id }}:{{ i.name }}:{{ i.product }}:{{ i.protocol }}:{{ i.changedate }}{{ i.img }}
             </div>
-            <div>
-                <img src="images/pic1.jpg" id="img" alt="">
+            <div v-if="current">
+                <img :src="current.img" id="img" alt="">
                 Name: 
-                <p id="name">123</p>
+                <p id="name">{{ current.name }}</p>
              </div>
-
         </div>
         
         
@@ -26,26 +25,23 @@
             el: '#app',
             data () {
                 return {
-                info: null
+                  info: null,
+                  current: null
                 }
             },
             mounted () {
                 axios
-                .get('../data.json')
-                .then(response => (this.info = response.data.artworks))
+                .get('../../data.json')
+                .then(response => (this.info = response.data.artworks,this.current = this.info[0]))
                 .catch(function (error) { // 请求失败处理
                     console.log(error);
                 });
-            },
+              },
             methods: {
-                zan(e){
-                    var target=event.target;
-                    var artwork=e;//(pl.id的值);
-                    $('#name').html(artwork.name);
-                    $('#img').attr("src",artwork.img);
-                          
+                zan(index){
+                    this.current = this.info[index]
+                    }
                 }
-            }
             })
             
             </script>
