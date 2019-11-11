@@ -1,10 +1,10 @@
 const express = require('express')
-const path = require('path')
+//const path = require('path')
 
 const app = express()
 const fs = require('fs');
 
-app.use(express.static('public/html'))
+//app.use(express.static('public/html'))
 
 rawdata = fs.readFileSync('data.json');
 data = JSON.parse(rawdata);
