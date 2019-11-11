@@ -15,7 +15,7 @@ app.get('/artworks', function (req, res) {
 
 app.get('/artworks/:id',function (req, res) {
   res.send(data.artworks)
-})//get one
+})//get one..
 
 app.post('/artworks',function (req, res) {
   res.send(1)// 1 = success, 0 = fail
