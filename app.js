@@ -16,8 +16,9 @@ app.set('views', __dirname + '/views');
 rawdata = fs.readFileSync('data.json');
 data = JSON.parse(rawdata);
 
-var artworks = require('./artworks');
-app.use('/artworks', artworks);
+app.get('/artworks', function (req, res) {
+  res.render('artworks',data);
+})//get all..
 
 
 app.get('/artworks/:id',function (req, res) {
