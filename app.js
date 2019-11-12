@@ -1,17 +1,24 @@
 const express = require('express')
-//const path = require('path')
+const path = require('path')
+const mustacheExpress = require('mustache-express');
 
 const app = express()
 const fs = require('fs');
 
-//app.use(express.static('public/html'))
+app.use(express.static('public/html'))
+
+app.engine('mustache', mustacheExpress());
+app.set('view engine', 'mustache');
+app.set('views', __dirname + '/views');
+
+
 
 rawdata = fs.readFileSync('data.json');
 data = JSON.parse(rawdata);
 
-app.get('/artworks', function (req, res) {
-  res.send(data.artworks)
-})//get all
+var artworks = require('./artworks');
+app.use('/artworks', artworks);
+
 
 app.get('/artworks/:id',function (req, res) {
   res.send(data.artworks)
