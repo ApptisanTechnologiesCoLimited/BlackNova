@@ -1,19 +1,4 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/iconfont.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/icheck.css">
-
-    <title>My Artworks - Black Novas</title>
-  </head>
-  <body>
+{{> header}}
         <div class="header relative">
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
@@ -100,7 +85,7 @@
                                 <table class="table list-box">
                                     {{#artworks}}
                                         <tr>
-                                        <td>{{ name }}</td>
+                                            <td><a href="/artwork/{{ id }}">{{ name }}</a></td>
                                         <td class="text-center w30">{{ changedate }}</td>
                                         </tr>
                                     {{/artworks}}
@@ -278,6 +263,4 @@
     //
     // })
   </script>
-   
-  </body>
-</html>
+{{> footer}}
