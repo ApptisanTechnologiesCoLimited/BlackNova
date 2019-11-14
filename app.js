@@ -42,12 +42,6 @@ app.get('/artworks', function (req, res) {
   });
 
 })//get all..
-
-
-
-
-
-
 app.get('/artwork/:id',function (req, res) {
   connection.query('SELECT * from artwork where id ='+req.params.id, function (error, results, fields) {
     if (error) throw error;
@@ -55,23 +49,35 @@ app.get('/artwork/:id',function (req, res) {
 
     res.render('single-artwork',{"artwork":artwork});
   });
-})//get one....
+})//get one artwork
+app.delete('/artwork/:id',function (req, res) {
+  connection.query('delete from artwork where id ='+req.params.id, function (error, results, fields) {
+    if (error) {throw error;}
+    res.send("success");
+  });
+
+
+})//add an artwork
+app.post('/artwork/',function (req, res) {
+  connection.query('insert into artwork(name,product,protocol,changedate,img) values( CONCAT("Artwork ",CEILING(RAND()*900+100)),"a product","cccc","2019-12-1","/images/pic1.jpg");', function (error, results, fields) {
+    if (error) {throw error;}
+    res.send("success");
+  });
+
+
+})//update an artwork
+app.put('/artwork/',function (req, res) {
+  connection.query('insert into artwork(name,product,protocol,changedate,img) values( CONCAT("Artwork ",CEILING(RAND()*900+100)),"a product","cccc","2019-12-1","/images/pic1.jpg");', function (error, results, fields) {
+    if (error) {throw error;}
+    res.send("success");
+  });
+
+
+})//update an artwork
 
 
 
 
-
-app.post('/artworks',function (req, res) {
-  res.send(1)// 1 = success, 0 = fail
-})//add one
-
-app.put('/artworks/:id', function (req, res) {
-  res.send(1)
-})//update one
-
-app.delete('/artworks/:id',function (req, res) {
-  res.send(1)
-})//delete one
 
 
 

@@ -66,7 +66,7 @@
                   <div class="row">
                       <p class="font30 text-center">MY ARTWORKS</p>
                       <div class="col-xs-12 mb20">
-                        <a href="">
+                        <a href="" onclick="addArtwork()">
                           <span class="iconfont icon-add button-icon mr20"></span>
                           <span class="font18 black">Add a new artwork</span>
                         </a>
@@ -84,9 +84,9 @@
                             <div class="scrollbar-dynamic">
                                 <table class="table list-box">
                                     {{#artworks}}
-                                        <tr>
-                                            <td><a href="/artwork/{{ id }}">{{ name }}</a></td>
-                                        <td class="text-center w30">{{ changedate }}</td>
+                                        <tr >
+                                            <td>{{ name }}</td>
+                                            <td class="text-center w30">{{ changedate }}</td>
                                         </tr>
                                     {{/artworks}}
 
@@ -103,14 +103,13 @@
                       </div>
 
                       <div class="col-sm-5 col-xs-12 text-center" v-if="current">
-                        <img :src="current.img" alt="">
+                        <img id="artwork_image" src="" alt="">
                         <div class="mt50 font11">
                           {{ current.product }}
                         </div>
                         <div class="mt50">
-                            <a class="black mr20" href="#" >Open</a>
+                            <a class="black mr20" href="" >Open</a>
                             <a class="black" data-toggle="modal" data-target="#edit"><span class="iconfont icon-edit font18"></span></a>
-                            <a class="black" href="#"><span class="iconfont icon-copy font18"></span></a>
                             <a class="black" data-toggle="modal" data-target="#delete"><span class="iconfont icon-delete font18"></span></a>
                         </div>
                       </div>
@@ -189,6 +188,8 @@
           </div>
         </div>
 
+
+
         <div class="modal" id="delete" tabindex="-1" role="dialog" aria-labelledby="" data-backdrop="static">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -197,12 +198,12 @@
                   <p class="font18 text-center">DELETE ARTWORK</p>
                   <div class="row">
                     <div class="col-sm-8 col-sm-offset-2">
-                       <p class="mt30 text-center font15">Are you sure you want to delete “{{ current.name }}” ?</p>
+                       <p class="mt30 text-center font15">Are you sure you want to delete “{{ name }}” ?</p>
                       <div class="mt50 text-center">
                         <div class="row mlr0">
                         
                           <div class="col-sm-offset-2 col-sm-4 prl7">
-                             <button type="button" class="ebutton">OK</button>
+                             <button type="button" class="ebutton" onclick="deleteArtwork({{ id }});">OK</button>
                           </div>
                           
                           <div class="col-sm-4 prl7">
@@ -216,25 +217,52 @@
               </div>
             </div>
           </div>
-        
+
     
       
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.js"></script>
-    <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
-    <script src="js/icheck.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-
-    <script src="js/scrollbar.min.js"></script>
     <script>
       jQuery(document).ready(function(){
           jQuery('.scrollbar-dynamic').scrollbar();
       });
 
+    //Add a mew artwork **This is a temporary method.
+    function addArtwork(){
+
+        $.post( "/artwork").done(function( data ) {
+                    if(result =="success")
+                        alert("Artwork has been successfully deleted.");
+                    $(location).attr('href',"/artworks");
+                });
+
+    }
+    //Delete a artwork by ID
+    function deleteArtwork(id){
+
+          $.ajax({
+              url: '/artwork/'+id,
+              type: 'DELETE',
+              success: function(result) {
+                  if(result =="success")
+                  alert("Artwork has been successfully deleted.");
+                  $(location).attr('href',"/artworks");
+
+
+              }
+          });
+
+      }
     </script>
-    <script type = "text/javascript">
+     <script type = "text/javascript">
+
+        // var app = new Vue({
+        //     el: '#app',
+        //     data: {
+        //         message: 'Hello Vue!'
+        //     }
+        // })
+
     //   new Vue({
     //   el: '#artworks',
     //   data () {
