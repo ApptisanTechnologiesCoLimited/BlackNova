@@ -24,7 +24,7 @@
                             <div class="scrollbar-dynamic">
                                 <table class="table list-box">
                                     {{#artworks}}
-                                        <tr>
+                                        <tr onclick="select({{id}});">
                                             <td>{{ name }}</td>
                                             <td class="text-center w30">{{ changedate }}</td>
                                         </tr>
@@ -44,8 +44,8 @@
 
                       <div class="col-sm-5 col-xs-12 text-center">
                         <img id="artwork_image" src="" alt="">
-                        <div class="mt50 font11">
-                          {{ current.product }}
+                        <div class="mt50 font11" id="artwordCode">
+
                         </div>
                         <div class="mt50">
                             <a class="black mr20" href="" >Open</a>
@@ -73,7 +73,7 @@
                      <table class="table mt30 font12">
                        <tr>
                          <td>Name</td>
-                         <td><input type="text" class="form-control" @value="current.name"></td>
+                         <td><input type="text" class="form-control" id="editName"></td>
                        </tr>
                        <tr>
                         <td class="text-middle">Product</td>
@@ -170,11 +170,23 @@
                   alert("Artwork has been successfully deleted.");
                   $(location).attr('href',"/artworks");
 
-
               }
           });
 
       }
+
+      // Show the data on the right-bar
+        function select(id) {
+            $.ajax({
+                url: '/artwork/api/'+id,
+                type: 'GET',
+                success: function(result) {
+                   $('#artwork_image').attr('src',result.img);
+                   $('#artwordCode').html(result.product);
+                    console.log(result);
+                }
+            });
+        }
     </script>
      <script type = "text/javascript">
 
@@ -195,7 +207,7 @@
     //     },
     //   mounted () {
     //       axios
-    //       .get('../../data.json')
+    //       .get('/artwork/api/')
     //       .then(response => (
     //         this.info = response.data.artworks,
     //         this.current = this.info[0]
