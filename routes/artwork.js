@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 var format = require('date-format');
 
-router.get('/all', function (req, res) {
+//API Methods
+router.get('/api', function (req, res) {
 
     connection.query('SELECT * from artwork', function (error, results, fields) {
         if (error) throw error;
@@ -11,19 +12,10 @@ router.get('/all', function (req, res) {
             results[i].changedate = format("dd.MM.yyyy",results[i].changedate);
             artworks.push(results[i]);
         }
-        res.render('artworks',{"artworks":artworks});
+        res.send(artworks);
     });
 
 })//get all..
-router.get('/:id',function (req, res) {
-    connection.query('SELECT * from artwork where id ='+req.params.id, function (error, results, fields) {
-        if (error) throw error;
-        var artwork = results[0];
-
-        res.render('single-artwork',{"artwork":artwork});
-    });
-})//get one artwork
-
 router.get('/api/:id',function (req, res) {
     connection.query('SELECT * from artwork where id ='+req.params.id, function (error, results, fields) {
         if (error) throw error;
@@ -52,7 +44,7 @@ router.put('/api/:id',function (req, res) {
 
 
 })//update an artwork
-router.post('/',function (req, res) {
+router.post('/api',function (req, res) {
     connection.query('insert into artwork(name,product,protocol,changedate,img) values( CONCAT("Artwork ",CEILING(RAND()*900+100)),"a product","cccc","2019-12-1","/images/pic1.jpg");', function (error, results, fields) {
         if (error) {throw error;}
         res.send(results);
@@ -60,6 +52,26 @@ router.post('/',function (req, res) {
 
 
 })//update an artwork THIS IS A TEMP METHOD, IT WILL BE REMOVED AFTER TESTING
+
+
+//Page Method
+router.get('/page', function (req, res) {
+
+
+    res.render('artworks');
+
+})//get all..
+router.get('/page/:id',function (req, res) {
+    connection.query('SELECT * from artwork where id ='+req.params.id, function (error, results, fields) {
+        if (error) throw error;
+        var artwork = results[0];
+
+        res.render('single-artwork',{"artwork":artwork});
+    });
+})//get one artwork
+
+
+
 
 
 
