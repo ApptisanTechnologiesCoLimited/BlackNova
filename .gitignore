@@ -2,3 +2,4 @@
 *.cmd
 node_modules/.package_versions.json
 node_modules/_camelcase@4.1.0@camelcase/index.js
+node_modules/.bin/nodemon
