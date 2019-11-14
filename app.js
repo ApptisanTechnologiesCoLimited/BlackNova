@@ -42,19 +42,6 @@ app.get('/artworks', function (req, res) {
   });
 
 })//get all..
-app.get('/artworks/:page_id', function (req, res) {
-
-  connection.query('SELECT * from artwork', function (error, results, fields) {
-    if (error) throw error;
-    var artworks =[];
-    for (i = 0; i < results.length; i++) {
-      results[i].changedate = format("dd.MM.yyyy",results[i].changedate);
-      artworks.push(results[i]);
-    }
-    res.render('artworks',{"artworks":artworks});
-  });
-
-})//get by pages..
 app.get('/artwork/:id',function (req, res) {
   connection.query('SELECT * from artwork where id ='+req.params.id, function (error, results, fields) {
     if (error) throw error;
