@@ -55,20 +55,20 @@ router.post('/api',function (req, res) {
 
 
 //Page Method
-router.get('/page', function (req, res) {
-
-
-    res.render('artworks');
-
-})//get all..
-router.get('/page/:id',function (req, res) {
-    connection.query('SELECT * from artwork where id ='+req.params.id, function (error, results, fields) {
-        if (error) throw error;
-        var artwork = results[0];
-
-        res.render('single-artwork',{"artwork":artwork});
-    });
-})//get one artwork
+// router.get('/page', function (req, res) {
+//
+//
+//     res.render('artworks');
+//
+// })//get all..
+// router.get('/page/:id',function (req, res) {
+//     connection.query('SELECT * from artwork where id ='+req.params.id, function (error, results, fields) {
+//         if (error) throw error;
+//         var artwork = results[0];
+//
+//         res.render('single-artwork',{"artwork":artwork});
+//     });
+// })//get one artwork
 
 
 

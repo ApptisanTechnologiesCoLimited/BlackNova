@@ -2,10 +2,10 @@ var express = require('express')
 var app = express()
 
 //Template Engine
-var mustacheExpress = require('mustache-express');
-app.engine('mustache', mustacheExpress());
-app.set('view engine', 'mustache');
-app.set('views', __dirname + '/views');
+// var mustacheExpress = require('mustache-express');
+// app.engine('mustache', mustacheExpress());
+// app.set('view engine', 'mustache');
+// app.set('views', __dirname + '/views');
 
 //Config Routes
 var artwork = require('./routes/artwork');
