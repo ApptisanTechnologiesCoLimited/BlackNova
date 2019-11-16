@@ -13,7 +13,7 @@
 
     <link rel="stylesheet" href="css/project.css">
 
-    <title>My Projects - Black Novas</title>
+    <title>Room Type - Black Novas</title>
   </head>
   <body>
         <div class="header relative">
@@ -77,123 +77,76 @@
               </div>
 
         </div>
-        <div class="content login middle" id="artworks">
+        <div class="bg-gray">
+            <ol class="breadcrumb">
+                <li><a href="#">My projects</a></li>
+                <li><a href="#">MGM Cotai</a></li>
+                <li class="active">Suite 1</li>
+                <a class="pull-right" href="#">All projects</a>
+              </ol>
+        </div>
+        <div class="content project middle" id="artworks">
           <div class="cell">
               <div class="container">
                   <div class="row">
-                      <p class="font30 text-center">MY PORJECTS</p>
-                      <div class="col-xs-12 mb20">
-                        <a href="#" data-toggle="modal" data-target="#addnew">
-                          <span class="iconfont icon-add button-icon mr20"></span>
-                          <span class="font18 black">Create a new project</span>
-                        </a>
+                      <div class="col-xs-12 col-sm-8 col-sm-offset-2 mb20">
+                          <p class="font30 text-center">MGM Cotai</p>
+                          <p class="text-center mt30 font15">
+                            <span>Suite 1</span> 
+                          </p>
 
-                      </div>
-                      <div class="col-xs-12 mb20">
-                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                          <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingOne">
-                              <h4 class="panel-title" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                <span class="iconfont icon-Hotel button-icon mr20"></span> Residential
-                                <span class="glyphicon glyphicon-menu-up pull-right" aria-hidden="true"></span>
-                              </h4>
-                            </div>
-                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                              <div class="panel-body">
-                                <table class="table mb0">
-                                  <tr>
-                                    <th class="w30">Name</th>
-                                    <th class="text-center w40"></th>
-                                    <th class="text-center">Status</th>
-                                    <th class="text-center">Latest change</th>
-                                  </tr>
-                                  <!-- loop start -->
-                                  <tr>
-                                    <td class="">MGM Macau Casino</td>
-                                    <td class="text-center option h40">
-                                      <a class="black mr20" href="#" >Open</a>
-                                      <a class="black" data-toggle="modal" data-target="#edit"><span class="iconfont icon-edit font18"></span></a>
-                                      <a class="black" href="#"><span class="iconfont icon-copy font18"></span></a>
+                          <div class="row mt50">
+                            <div class="col-sm-4 prl30">
+                              <div class="product-box">
+                                <div class="img-box p20">
+                                  <img src="images/pic1.jpg" class="mw100" alt="">
+                                </div>
+                                <p class="font18 mt20">ALBA 13</p>
+                                <div class="row editbox">
+                                  <div class="col-xs-6">
+                                    <p class="showPcs1 showp pcs">45 pcs</p>
+                                    <p class="editPcs1 hidp pcsinput">
+                                      <input id="pinput1" type="tel" class="w30" value="45"> pcs
+                                    </p>
+                                  </div>
+                                  <div class="col-xs-6 text-right">
+                                      <a class="black editPcsButton" onclick="editPcsButton(1);"><span class="iconfont icon-edit font18"></span></a>
                                       <a class="black" data-toggle="modal" data-target="#delete"><span class="iconfont icon-delete font18"></span></a>
-                                    </td>
-                                    <td class="text-center">Ordered</td>
-                                    <td class="text-center">14.04.2019</td>
-                                  </tr>
-                                  <!-- loop end -->
-                                </table>
+                                  </div>
+                                </div>
+                                
+                                
                               </div>
+                              
                             </div>
-                          </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingTwo">
-                              <h4 class="panel-title collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-
-                                  <span class="iconfont icon-xingzhuang button-icon mr20"></span> Hospitality
-                                  <span class="glyphicon glyphicon-menu-up pull-right" aria-hidden="true"></span>
-
-                              </h4>
-                            </div>
-                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                              <div class="panel-body">
-                                <table class="table mb0">
-                                  <tr>
-                                    <th class="w30">Name</th>
-                                    <th class="text-center w40"></th>
-                                    <th class="text-center">Status</th>
-                                    <th class="text-center">Latest change</th>
-                                  </tr>
-                                  <!-- loop start -->
-                                  <tr>
-                                      <td class="">MGM Macau Casino</td>
-                                      <td class="text-center option h40">
-                                        <a class="black mr20" href="#" >Open</a>
-                                        <a class="black" data-toggle="modal" data-target="#edit"><span class="iconfont icon-edit font18"></span></a>
-                                        <a class="black" href="#"><span class="iconfont icon-copy font18"></span></a>
+                            <div class="col-sm-4 prl30">
+                                <div class="product-box">
+                                  <div class="img-box p20">
+                                    <img src="images/pic1.jpg" class="mw100" alt="">
+                                  </div>
+                                  <p class="font18 mt20">ALBA 13</p>
+                                  <div class="row editbox">
+                                    <div class="col-xs-6">
+                                      <p class="showPcs2 showp pcs">45 pcs</p>
+                                      <p class="editPcs2 hidp pcsinput">
+                                        <input id="pinput2" type="tel" class="w30" value="45"> pcs
+                                      </p>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <a class="black editPcsButton" onclick="editPcsButton(2);"><span class="iconfont icon-edit font18"></span></a>
                                         <a class="black" data-toggle="modal" data-target="#delete"><span class="iconfont icon-delete font18"></span></a>
-                                      </td>
-                                      <td class="text-center">Ordered</td>
-                                      <td class="text-center">14.04.2019</td>
-                                    </tr>
-                                    <!-- loop end -->
-                                </table>
+                                    </div>
+                                  </div>
+                                  
+                                  
+                                </div>
+                                
                               </div>
-                            </div>
                           </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingThree">
-                              <h4 class="panel-title collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                <span class="iconfont  button-icon mr20"></span> Office and Commercia
-                                <span class="glyphicon glyphicon-menu-up pull-right" aria-hidden="true"></span>
-                              </h4>
-                            </div>
-                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                              <div class="panel-body">
-                                <table class="table mb0">
-                                  <tr>
-                                    <th class="w30">Name</th>
-                                    <th class="text-center w40"></th>
-                                    <th class="text-center">Status</th>
-                                    <th class="text-center">Latest change</th>
-                                  </tr>
-                                  <!-- loop start -->
-                                  <tr>
-                                      <td class="">MGM Macau Casino</td>
-                                      <td class="text-center option h40">
-                                        <a class="black mr20" href="#" >Open</a>
-                                        <a class="black" data-toggle="modal" data-target="#edit"><span class="iconfont icon-edit font18"></span></a>
-                                        <a class="black" href="#"><span class="iconfont icon-copy font18"></span></a>
-                                        <a class="black" data-toggle="modal" data-target="#delete"><span class="iconfont icon-delete font18"></span></a>
-                                      </td>
-                                      <td class="text-center">Ordered</td>
-                                      <td class="text-center">14.04.2019</td>
-                                    </tr>
-                                    <!-- loop end -->
-                                </table>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                    
+                        
                       </div>
+                     
 
                   </div>
 
@@ -434,40 +387,34 @@
 
     <script src="js/scrollbar.min.js"></script>
     <script>
+     $("input").on("input propertychange",function(){
+        var focusInput = $('input:focus').attr('id');
+        console.log(focusInput);
+      })
+            
       jQuery(document).ready(function(){
           jQuery('.scrollbar-dynamic').scrollbar();
+          
       });
+      function editPcsButton(index){
+            jQuery('.showPcs'+ index).hide();
+            jQuery('.editPcs'+ index).show();
+          }
+      
+
+      
+      $(document).click(function(event){
+        var _con = $('.editbox'); 
+        if(!_con.is(event.target) && _con.has(event.target).length === 0){ 
+          jQuery('.showp').show();
+          jQuery('.hidp').hide();
+          
+        }
+   });
+
 
     </script>
-    <script type = "text/javascript">
-      new Vue({
-      el: '#artworks',
-      data () {
-          return {
-          info: null,
-          current: null
-          }
-        },
-      mounted () {
-          axios
-          .get('../data.json')
-          .then(response => (
-            this.info = response.data.artworks,
-            this.current = this.info[0]
-            ))
-          .catch(function (error) { // 请求失败处理
-              console.log(error);
-          });
-
-        },
-      methods: {
-        zan(index){
-              this.current = this.info[index]
-              }
-          }
-
-    })
-  </script>
+    
 
   </body>
 </html>

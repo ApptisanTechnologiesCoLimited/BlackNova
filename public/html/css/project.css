@@ -17,8 +17,8 @@ tr:hover .option a{
   display: inline-block;
 }
 .h40{
-  min-height:42px;
-  height: 42px;
+  min-height:45px;
+  height: 45px;
 }
 tr:hover td:first-child{
   color:#D00000;
@@ -34,4 +34,30 @@ tr:hover td:first-child{
 }
 .modal-dialog {
   margin: 4.2% auto;
+}
+.breadcrumb{
+  padding:15px;
+  margin-bottom:0;
+}
+.breadcrumb a{
+  color:#777;
+}
+.breadcrumb>li+li:before{
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  font-size:12px;
+  color:#999;
+  padding:0 15px;
+}
+.content.project{
+  min-height: calc(100vh - 180px);
+}
+.img-box{
+  border:1px solid #999;
+}
+.product-box:hover .img-box{
+  border-color:#F40000;
+}
+.pcsinput{
+  display: none;
 }

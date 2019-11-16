@@ -77,122 +77,77 @@
               </div>
 
         </div>
-        <div class="content login middle" id="artworks">
+        <div class="bg-gray">
+            <ol class="breadcrumb">
+                <li><a href="#">My projects</a></li>
+                <li class="active">MGM Cotai</li>
+                <a class="pull-right" href="#">All projects</a>
+              </ol>
+        </div>
+        <div class="content project middle" id="artworks">
           <div class="cell">
               <div class="container">
                   <div class="row">
-                      <p class="font30 text-center">MY PORJECTS</p>
-                      <div class="col-xs-12 mb20">
-                        <a href="#" data-toggle="modal" data-target="#addnew">
-                          <span class="iconfont icon-add button-icon mr20"></span>
-                          <span class="font18 black">Create a new project</span>
-                        </a>
-
+                      <div class="col-xs-12 col-sm-8 col-sm-offset-2 mb20">
+                          <p class="font30 text-center">MGM Cotai</p>
+                          <p class="text-center font18 mt30">
+                            <span>US, New York City</span> 
+                            <span class="ml40">Hospitality</span>
+                          </p>
+                          <div class="mt30 text-justify">
+                              Suspendisse finibus non erat vitae condimentum. Vivamus elementum nisl elit, vel vulputate massa maximus et. Mauris fermentum felis interdum, pulvinar diam eu, pellentesque mauris. Nam at nunc finibus, convallis nisl sit amet, euismod dolor.
+                          </div>
+                          <div class="mt30">
+                              <a class="black" data-toggle="modal" data-target="#edit"><span class="iconfont icon-edit font18"></span> Edit project details</a>
+                              <a class="pull-right black" href=""> Print project artwork</a>
+                          </div>
+                        
                       </div>
-                      <div class="col-xs-12 mb20">
-                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                          <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingOne">
-                              <h4 class="panel-title" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                <span class="iconfont icon-Hotel button-icon mr20"></span> Residential
-                                <span class="glyphicon glyphicon-menu-up pull-right" aria-hidden="true"></span>
-                              </h4>
-                            </div>
-                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                              <div class="panel-body">
-                                <table class="table mb0">
-                                  <tr>
-                                    <th class="w30">Name</th>
-                                    <th class="text-center w40"></th>
-                                    <th class="text-center">Status</th>
-                                    <th class="text-center">Latest change</th>
-                                  </tr>
-                                  <!-- loop start -->
-                                  <tr>
-                                    <td class="">MGM Macau Casino</td>
-                                    <td class="text-center option h40">
-                                      <a class="black mr20" href="#" >Open</a>
-                                      <a class="black" data-toggle="modal" data-target="#edit"><span class="iconfont icon-edit font18"></span></a>
-                                      <a class="black" href="#"><span class="iconfont icon-copy font18"></span></a>
-                                      <a class="black" data-toggle="modal" data-target="#delete"><span class="iconfont icon-delete font18"></span></a>
-                                    </td>
-                                    <td class="text-center">Ordered</td>
-                                    <td class="text-center">14.04.2019</td>
-                                  </tr>
-                                  <!-- loop end -->
-                                </table>
-                              </div>
-                            </div>
+                      <div class="col-xs-12 col-sm-6 col-sm-offset-3 mb20 mt50">
+                        <div class="row">
+                          <div class="col-sm-6"><input type="text" class="form-control" placeholder="Villa 1"></div>
+                          <div class="col-sm-3 text-center">
+                              <button type="button" class="ebutton">CREATE</button>
                           </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingTwo">
-                              <h4 class="panel-title collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-
-                                  <span class="iconfont icon-xingzhuang button-icon mr20"></span> Hospitality
-                                  <span class="glyphicon glyphicon-menu-up pull-right" aria-hidden="true"></span>
-
-                              </h4>
-                            </div>
-                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                              <div class="panel-body">
-                                <table class="table mb0">
+                          <div class="col-sm-3 text-center">
+                              <button type="button" class="ebutton">CANCEL</button>
+                          </div>
+                          <div class="col-sm-12 font12 mt10">Possible names: Suite, Standard Room, Deluxe Room</div>
+                          <div class="col-sm-12 mt50">
+                              <table class="table mb0">
                                   <tr>
                                     <th class="w30">Name</th>
                                     <th class="text-center w40"></th>
-                                    <th class="text-center">Status</th>
                                     <th class="text-center">Latest change</th>
                                   </tr>
                                   <!-- loop start -->
                                   <tr>
-                                      <td class="">MGM Macau Casino</td>
+                                      <td class="">Suite 1</td>
                                       <td class="text-center option h40">
                                         <a class="black mr20" href="#" >Open</a>
-                                        <a class="black" data-toggle="modal" data-target="#edit"><span class="iconfont icon-edit font18"></span></a>
                                         <a class="black" href="#"><span class="iconfont icon-copy font18"></span></a>
                                         <a class="black" data-toggle="modal" data-target="#delete"><span class="iconfont icon-delete font18"></span></a>
                                       </td>
-                                      <td class="text-center">Ordered</td>
+                                      <td class="text-center">14.04.2019</td>
+                                    </tr>
+                                    <!-- loop end -->
+                                    <!-- loop start -->
+                                  <tr>
+                                      <td class="">Suite 2</td>
+                                      <td class="text-center option h40">
+                                        <a class="black mr20" href="#" >Open</a>
+                                        <a class="black" href="#"><span class="iconfont icon-copy font18"></span></a>
+                                        <a class="black" data-toggle="modal" data-target="#delete"><span class="iconfont icon-delete font18"></span></a>
+                                      </td>
                                       <td class="text-center">14.04.2019</td>
                                     </tr>
                                     <!-- loop end -->
                                 </table>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingThree">
-                              <h4 class="panel-title collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                <span class="iconfont  button-icon mr20"></span> Office and Commercia
-                                <span class="glyphicon glyphicon-menu-up pull-right" aria-hidden="true"></span>
-                              </h4>
-                            </div>
-                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                              <div class="panel-body">
-                                <table class="table mb0">
-                                  <tr>
-                                    <th class="w30">Name</th>
-                                    <th class="text-center w40"></th>
-                                    <th class="text-center">Status</th>
-                                    <th class="text-center">Latest change</th>
-                                  </tr>
-                                  <!-- loop start -->
-                                  <tr>
-                                      <td class="">MGM Macau Casino</td>
-                                      <td class="text-center option h40">
-                                        <a class="black mr20" href="#" >Open</a>
-                                        <a class="black" data-toggle="modal" data-target="#edit"><span class="iconfont icon-edit font18"></span></a>
-                                        <a class="black" href="#"><span class="iconfont icon-copy font18"></span></a>
-                                        <a class="black" data-toggle="modal" data-target="#delete"><span class="iconfont icon-delete font18"></span></a>
-                                      </td>
-                                      <td class="text-center">Ordered</td>
-                                      <td class="text-center">14.04.2019</td>
-                                    </tr>
-                                    <!-- loop end -->
-                                </table>
-                              </div>
-                            </div>
                           </div>
                         </div>
+                        
+                          
+
                       </div>
 
                   </div>
