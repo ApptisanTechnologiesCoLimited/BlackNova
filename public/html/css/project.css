@@ -32,3 +32,6 @@ tr:hover td:first-child{
 .collapsed .glyphicon-menu-up:before{
   content: "\e259";
 }
+.modal-dialog {
+  margin: 4.2% auto;
+}

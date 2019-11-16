@@ -83,7 +83,7 @@
                   <div class="row">
                       <p class="font30 text-center">MY PORJECTS</p>
                       <div class="col-xs-12 mb20">
-                        <a href="">
+                        <a href="#" data-toggle="modal" data-target="#addnew">
                           <span class="iconfont icon-add button-icon mr20"></span>
                           <span class="font18 black">Create a new project</span>
                         </a>
@@ -112,7 +112,7 @@
                                     <td class="">MGM Macau Casino</td>
                                     <td class="text-center option h40">
                                       <a class="black mr20" href="#" >Open</a>
-                                      <a class="black"><span class="iconfont icon-edit font18"></span></a>
+                                      <a class="black" data-toggle="modal" data-target="#edit"><span class="iconfont icon-edit font18"></span></a>
                                       <a class="black" href="#"><span class="iconfont icon-copy font18"></span></a>
                                       <a class="black"><span class="iconfont icon-delete font18"></span></a>
                                     </td>
@@ -144,17 +144,17 @@
                                   </tr>
                                   <!-- loop start -->
                                   <tr>
-                                    <td class="">MGM Macau Casino</td>
-                                    <td class="text-center option h40">
-                                      <a class="black mr20" href="#" >Open</a>
-                                      <a class="black"><span class="iconfont icon-edit font18"></span></a>
-                                      <a class="black" href="#"><span class="iconfont icon-copy font18"></span></a>
-                                      <a class="black"><span class="iconfont icon-delete font18"></span></a>
-                                    </td>
-                                    <td class="text-center">Ordered</td>
-                                    <td class="text-center">14.04.2019</td>
-                                  </tr>
-                                  <!-- loop end -->
+                                      <td class="">MGM Macau Casino</td>
+                                      <td class="text-center option h40">
+                                        <a class="black mr20" href="#" >Open</a>
+                                        <a class="black" data-toggle="modal" data-target="#edit"><span class="iconfont icon-edit font18"></span></a>
+                                        <a class="black" href="#"><span class="iconfont icon-copy font18"></span></a>
+                                        <a class="black"><span class="iconfont icon-delete font18"></span></a>
+                                      </td>
+                                      <td class="text-center">Ordered</td>
+                                      <td class="text-center">14.04.2019</td>
+                                    </tr>
+                                    <!-- loop end -->
                                 </table>
                               </div>
                             </div>
@@ -176,18 +176,18 @@
                                     <th class="text-center">Latest change</th>
                                   </tr>
                                   <!-- loop start -->
-                                  <tr class="glay">
-                                    <td class="">MGM Macau Casino</td>
-                                    <td class="text-center option h40">
-                                      <a class="black mr20" href="#" >Open</a>
-                                      <a class="black"><span class="iconfont icon-edit font18"></span></a>
-                                      <a class="black" href="#"><span class="iconfont icon-copy font18"></span></a>
-                                      <a class="black"><span class="iconfont icon-delete font18"></span></a>
-                                    </td>
-                                    <td class="text-center">Ordered</td>
-                                    <td class="text-center">14.04.2019</td>
-                                  </tr>
-                                  <!-- loop end -->
+                                  <tr>
+                                      <td class="">MGM Macau Casino</td>
+                                      <td class="text-center option h40">
+                                        <a class="black mr20" href="#" >Open</a>
+                                        <a class="black" data-toggle="modal" data-target="#edit"><span class="iconfont icon-edit font18"></span></a>
+                                        <a class="black" href="#"><span class="iconfont icon-copy font18"></span></a>
+                                        <a class="black"><span class="iconfont icon-delete font18"></span></a>
+                                      </td>
+                                      <td class="text-center">Ordered</td>
+                                      <td class="text-center">14.04.2019</td>
+                                    </tr>
+                                    <!-- loop end -->
                                 </table>
                               </div>
                             </div>
@@ -227,37 +227,75 @@
             <div class="modal-content">
 
               <div class="modal-body">
-                <p class="font18 text-center">EDIT ARTWORK</p>
+                <p class="font18 text-center">EDIT PROJECT DETAILS</p>
                 <div class="row">
                   <div class="col-sm-8 col-sm-offset-2">
                      <table class="table mt30 font12">
                        <tr>
-                         <td>Name</td>
-                         <td><input type="text" class="form-control" @value="current.name"></td>
+                         <td>Project name</td>
+                         <td><input type="text" class="form-control" value=""></td>
                        </tr>
                        <tr>
-                        <td class="text-middle">Product</td>
-                        <td class="text-right">ALBA 4 General Purpose + Socket (Double Frame)</td>
+                        <td class="text-middle">Customer name</td>
+                        <td class="text-right"><input type="text" class="form-control" value=""></td>
                       </tr>
                       <tr>
-                        <td class="text-middle">Unique ID</td>
-                        <td class="text-right">999999</td>
+                        <td class="text-middle">Category</td>
+                        <td class="text-right">
+                          <select class="form-control">
+                            <option value="Hospitality">Hospitality</option>
+                            <option value="Residential">Residential</option>
+                            
+                          </select>
+                        </td>
                       </tr>
                       <tr>
-                        <td class="text-middle">Communication protocol</td>
+                        <td class="text-middle">Country</td>
                         <td class="text-right text-middle">
-                          <input type="text" class="form-control" value="Cresnet" id="communication"/>
+                          <input type="text" class="form-control" value="">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="text-middle">City</td>
+                        <td class="text-right text-middle">
+                          <input type="text" class="form-control" value="">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="text-middle">Description <br><span class="font10">(max 250 symbols)</span> </td>
+                        <td class="text-right text-middle">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="text-middle">Number of rooms</td>
+                        <td class="text-right text-middle">
+                          <input type="text" class="form-control" value="">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="text-middle">Hotel brand</td>
+                        <td class="text-right text-middle">
+                            <select class="form-control">
+                                <option value="Hospitality">Hospitality</option>
+                                <option value="Residential">Residential</option>
+                                
+                              </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="text-middle">Purchase Order #</td>
+                        <td class="text-right text-middle">
+                          <input type="text" class="form-control" value="">
                         </td>
                       </tr>
                     </table>
                     <div class="mt50 text-center">
                       <div class="row mlr0">
-                        <div class="col-sm-4 prl7">
+                        <div class="col-sm-4 prl7 col-sm-offset-2">
                            <button type="button" class="ebutton">OK</button>
                         </div>
-                        <div class="col-sm-4 prl7">
-                            <button type="button" class="ebutton">Change design</button>
-                        </div>
+                       
                         <div class="col-sm-4 prl7">
                             <button type="button" data-dismiss="modal" aria-label="Close" class="ebutton">Cancel</button>
                         </div>
@@ -269,6 +307,92 @@
             </div>
           </div>
         </div>
+
+        <div class="modal" id="addnew" tabindex="-1" role="dialog" aria-labelledby="" data-backdrop="static">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+  
+                <div class="modal-body">
+                  <p class="font18 text-center">CREATE A NEW PROJECT</p>
+                  <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                       <table class="table mt30 font12">
+                         <tr>
+                           <td>Project name</td>
+                           <td><input type="text" class="form-control" value=""></td>
+                         </tr>
+                         <tr>
+                          <td class="text-middle">Customer name</td>
+                          <td class="text-right"><input type="text" class="form-control" value=""></td>
+                        </tr>
+                        <tr>
+                          <td class="text-middle">Category</td>
+                          <td class="text-right">
+                            <select class="form-control">
+                              <option value="Hospitality">Hospitality</option>
+                              <option value="Residential">Residential</option>
+                              
+                            </select>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-middle">Country</td>
+                          <td class="text-right text-middle">
+                            <input type="text" class="form-control" value="">
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-middle">City</td>
+                          <td class="text-right text-middle">
+                            <input type="text" class="form-control" value="">
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-middle">Description <br><span class="font10">(max 250 symbols)</span> </td>
+                          <td class="text-right text-middle">
+                              <textarea class="form-control" rows="3"></textarea>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-middle">Number of rooms</td>
+                          <td class="text-right text-middle">
+                            <input type="text" class="form-control" value="">
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-middle">Hotel brand</td>
+                          <td class="text-right text-middle">
+                              <select class="form-control">
+                                  <option value="Hospitality">Hospitality</option>
+                                  <option value="Residential">Residential</option>
+                                  
+                                </select>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-middle">Purchase Order #</td>
+                          <td class="text-right text-middle">
+                            <input type="text" class="form-control" value="">
+                          </td>
+                        </tr>
+                      </table>
+                      <div class="mt50 text-center">
+                        <div class="row mlr0">
+                          <div class="col-sm-4 prl7 col-sm-offset-2">
+                             <button type="button" class="ebutton">OK</button>
+                          </div>
+                         
+                          <div class="col-sm-4 prl7">
+                              <button type="button" data-dismiss="modal" aria-label="Close" class="ebutton">Cancel</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
         <div class="modal" id="delete" tabindex="-1" role="dialog" aria-labelledby="" data-backdrop="static">
             <div class="modal-dialog" role="document">
