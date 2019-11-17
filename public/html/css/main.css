@@ -1,0 +1,547 @@
+body{
+  color:#000;
+}
+.main{
+    max-width:1440px;
+    width:100%;
+    margin:0 auto;
+    box-shadow:0 0 5px #eee;
+}
+a,button,tr,.img-box{
+    transition: 0.5s;
+}
+a{
+   cursor: pointer;
+}
+a.black{
+    display: inline-block;
+    line-height:26px;
+    height:26px;
+}
+a:hover span{
+    text-decoration: underline;
+}
+a:hover .iconfont{
+  text-decoration: none;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6,b,.b{
+    font-weight:bold;
+}
+hr{
+    border-color:#979797;
+}
+.relative{
+    position: relative;
+}
+.w30{
+    width:30%;
+}
+.w40{
+    width:40%;
+}
+.mw100{
+    max-width:100%;
+}
+.font10{
+    font-size: 10px;
+}
+.font11{
+    font-size: 11px;
+}
+.font12{
+    font-size: 12px;
+}
+.font13{
+    font-size: 13px;
+}
+.font15{
+    font-size: 15px;
+}
+.font16{
+    font-size: 16px;
+}
+.font18{
+    font-size:18px;
+}
+.font20{
+    font-size:20px;
+}
+.font30{
+    font-size:30px;
+}
+.now{
+    font-weight: 400;
+}
+.lh15{
+    line-height: 1.5;
+}
+.lh2{
+    line-height: 2;
+}
+.lh25{
+    line-height: 2.5;
+}
+.black{
+    color: #000;
+}
+.gray{
+    color:#979797;
+}
+.pl10{
+    padding-left:10px!important;
+}
+.p20{
+    padding: 20px;
+}
+.prl5{
+    padding-right:5px!important;
+    padding-left:5px!important;
+}
+.prl7{
+    padding-right:7px!important;
+    padding-left:7px!important;
+}
+.prl30{
+    padding-right:30px;
+    padding-left:30px;
+}
+.prl70{
+    padding-right:70px;
+    padding-left:70px;
+}
+.ptb30{
+    padding-top: 30px;
+    padding-bottom:30px;
+}
+.pt100{
+    padding-top: 100px;
+}
+.mlr0{
+    margin-left:0!important;
+    margin-right:0!important;
+}
+.mlr-7{
+    margin-left:-7px!important;
+    margin-right:-7px!important;
+}
+.mr20{
+    margin-right:20px;
+}
+.mr-15{
+    margin-right:-15px;
+}
+.ml20{
+    margin-left:20px;
+}
+.ml40{
+    margin-left:40px;
+}
+.mt10{
+    margin-top: 10px;
+}
+.mt20{
+    margin-top: 20px;
+}
+.mt30{
+    margin-top: 30px;
+}
+.mt50{
+    margin-top: 50px;
+}
+.mt5p{
+    margin-top: 5%;
+}
+.mt15p{
+    margin-top: 15%;
+}
+.mb0{
+    margin-bottom: 0px!important;
+}
+.mb20{
+    margin-bottom: 20px;
+}
+.inlineb{
+    display: inline-block;
+}
+/* header style */
+.navbar{
+    border-radius:0;
+}
+.navbar-nav>li>a{
+    font-size: 18px;
+    color:#000;
+    padding: 15px 30px;
+}
+.navbar-toggle{
+    display: block;
+    padding-right: 0;
+    border:none;
+    margin-left: 20px;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+    background-color: transparent;
+}
+.navbar-default{
+    background-color:#fff;
+    border: none;
+    margin-bottom:0;
+}
+#right-menu .modal-dialog{
+    float: right;
+    margin:0;
+    width:360px;
+}
+#right-menu .modal-content{
+    border-radius:0;
+    height:100vh;
+}
+#right-menu button.close{
+    opacity: 1;
+    padding: 17px;
+    font-size: 30px;
+    float: none;
+}
+.modal-dialog{
+    margin:10% auto;
+}
+#edit .modal-content,
+#delete .modal-content{
+    padding:50px 20px;
+}
+.menu li a{
+    line-height:3;
+    color:#000;
+}
+
+/* Form style */
+.form-horizontal .control-label{
+    text-align: left;
+    font-weight:400;
+}
+.form-control{
+    border-radius:0;
+}
+#showPassword{
+    z-index:99;
+    cursor: pointer;
+    pointer-events:auto;
+}
+.Fbutton{
+    border:none;
+    font-size:18px;
+    padding:8px 10px;
+    background-color: transparent;
+}
+.Fbutton:hover{
+    background-color: #777;
+    color:#fff;
+}
+.ebutton{
+    border: none;
+    background-color:#999;
+    padding:8px 0;
+    color:#fff;
+    width:100%;
+}
+.ebutton:hover{
+    background-color:#333;
+}
+/* Content style  */
+.content{
+    min-height:calc( 100vh - 405px);
+}
+.content.login{
+    min-height: calc(100vh - 130px);
+}
+.middle{
+    display: table;
+    width: 100%;
+}
+.middle .cell{
+    display: table-cell;
+    vertical-align: middle;
+}
+/* Footer style */
+.footer{
+    border-top:1px solid #979797;
+    padding: 35px 0;
+}
+.footer a{
+    color:#000;
+    font-size: 12px;
+    line-height: 2.5;
+}
+/*************** SCROLLBAR BASE CSS ***************/
+
+.scroll-wrapper {
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: relative;
+    height:300px;
+}
+
+.scroll-wrapper > .scroll-content {
+    border: none !important;
+    box-sizing: content-box !important;
+    height: auto;
+    left: 0;
+    margin: 0;
+    max-height: none;
+    max-width: none !important;
+    overflow: scroll !important;
+    padding: 0;
+    position: relative !important;
+    top: 0;
+    width: auto !important;
+}
+
+.scroll-wrapper > .scroll-content::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+
+.scroll-element {
+    display: none;
+}
+.scroll-element, .scroll-element div {
+    box-sizing: content-box;
+}
+
+.scroll-element.scroll-x.scroll-scrollx_visible,
+.scroll-element.scroll-y.scroll-scrolly_visible {
+    display: block;
+}
+
+.scroll-element .scroll-bar,
+.scroll-element .scroll-arrow {
+    cursor: default;
+}
+
+.scroll-textarea {
+    border: 1px solid #cccccc;
+    border-top-color: #999999;
+}
+.scroll-textarea > .scroll-content {
+    overflow: hidden !important;
+}
+.scroll-textarea > .scroll-content > textarea {
+    border: none !important;
+    box-sizing: border-box;
+    height: 100% !important;
+    margin: 0;
+    max-height: none !important;
+    max-width: none !important;
+    overflow: scroll !important;
+    outline: none;
+    padding: 2px;
+    position: relative !important;
+    top: 0;
+    width: 100% !important;
+}
+.scroll-textarea > .scroll-content > textarea::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+
+
+
+
+/*************** SCROLLBAR DYNAMIC ***************/
+
+.scrollbar-dynamic > .scroll-element,
+.scrollbar-dynamic > .scroll-element div
+{
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+}
+
+.scrollbar-dynamic > .scroll-element div {
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.scrollbar-dynamic > .scroll-element.scroll-x {
+    bottom: 2px;
+    height: 7px;
+    left: 0;
+    min-width: 100%;
+    width: 100%;
+}
+
+.scrollbar-dynamic > .scroll-element.scroll-y {
+    height: 100%;
+    min-height: 100%;
+    right: 2px;
+    top: 0;
+    width: 7px;
+}
+
+.scrollbar-dynamic > .scroll-element .scroll-element_outer {
+    opacity: 0.3;
+
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+}
+.scrollbar-dynamic > .scroll-element .scroll-element_size {
+    background-color: #cccccc;
+    opacity: 0;
+
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+
+    -webkit-transition: opacity 0.2s;
+    -moz-transition: opacity 0.2s;
+    -o-transition: opacity 0.2s;
+    -ms-transition: opacity 0.2s;
+    transition: opacity 0.2s;
+}
+
+.scrollbar-dynamic > .scroll-element .scroll-bar {
+    background-color: #6c6e71;
+
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+}
+
+/* scrollbar height/width & offset from container borders */
+
+.scrollbar-dynamic > .scroll-element.scroll-x .scroll-bar {
+    bottom: 0;
+    height: 7px;
+    min-width: 24px;
+    top: auto;
+}
+.scrollbar-dynamic > .scroll-element.scroll-y .scroll-bar {
+    left: auto;
+    min-height: 24px;
+    right: 0;
+    width: 7px;
+}
+
+.scrollbar-dynamic > .scroll-element.scroll-x .scroll-element_outer {
+    bottom: 0;
+    top: auto;
+    left: 2px;
+
+    -webkit-transition: height 0.2s;
+    -moz-transition: height 0.2s;
+    -o-transition: height 0.2s;
+    -ms-transition: height 0.2s;
+    transition: height 0.2s;
+}
+
+.scrollbar-dynamic > .scroll-element.scroll-y .scroll-element_outer {
+    left: auto;
+    right: 0;
+    top: 2px;
+
+    -webkit-transition: width 0.2s;
+    -moz-transition: width 0.2s;
+    -o-transition: width 0.2s;
+    -ms-transition: width 0.2s;
+    transition: width 0.2s;
+}
+
+.scrollbar-dynamic > .scroll-element.scroll-x .scroll-element_size { left: -4px; }
+.scrollbar-dynamic > .scroll-element.scroll-y .scroll-element_size { top: -4px; }
+
+
+/* update scrollbar offset if both scrolls are visible */
+
+.scrollbar-dynamic > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size { left: -11px; }
+.scrollbar-dynamic > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size { top: -11px; }
+
+
+/* hover & drag */
+
+.scrollbar-dynamic > .scroll-element:hover .scroll-element_outer,
+.scrollbar-dynamic > .scroll-element.scroll-draggable .scroll-element_outer {
+    overflow: hidden;
+
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+.scrollbar-dynamic > .scroll-element:hover .scroll-element_outer .scroll-element_size,
+.scrollbar-dynamic > .scroll-element.scroll-draggable .scroll-element_outer .scroll-element_size {
+    opacity: 1;
+}
+.scrollbar-dynamic > .scroll-element:hover .scroll-element_outer .scroll-bar,
+.scrollbar-dynamic > .scroll-element.scroll-draggable .scroll-element_outer .scroll-bar {
+    height: 100%;
+    width: 100%;
+
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+}
+
+.scrollbar-dynamic > .scroll-element.scroll-x:hover .scroll-element_outer,
+.scrollbar-dynamic > .scroll-element.scroll-x.scroll-draggable .scroll-element_outer {
+    height: 20px;
+    min-height: 7px;
+}
+.scrollbar-dynamic > .scroll-element.scroll-y:hover .scroll-element_outer,
+.scrollbar-dynamic > .scroll-element.scroll-y.scroll-draggable .scroll-element_outer {
+    min-width: 7px;
+    width: 20px;
+}
+/* Icon button style */
+.button-icon{
+    display: inline-block;
+    width:65px;
+    height:65px;
+    border-radius: 50%;
+    border: 1px solid #979797;
+    text-align: center;
+    line-height:65px;
+    font-size: 34px;
+    color:#979797;
+    vertical-align: middle;
+}
+.text-middle{
+    vertical-align: middle!important;
+}
+/* Table style */
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    border:none;
+}
+.list-box tr td{
+    cursor: pointer;
+}
+.list-box tr:hover,
+tr.active,
+.table>tbody>tr.active>td, .table>tbody>tr.active>th, .table>tbody>tr>td.active, .table>tbody>tr>th.active, .table>tfoot>tr.active>td, .table>tfoot>tr.active>th, .table>tfoot>tr>td.active, .table>tfoot>tr>th.active, .table>thead>tr.active>td, .table>thead>tr.active>th, .table>thead>tr>td.active, .table>thead>tr>th.active{
+    color:#D00000;
+    background-color:#f9f9f9!important;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    vertical-align: middle;
+}
+/* Animation style */
+@keyframes bounce-down {
+   0%  {
+       transform: translateY(0);
+       }
+   50%  {
+       transform: translateY(5px);
+    }
+
+   100% {
+       transform: translateY(0);
+    }
+   }
+.animate-bounce-down{
+    animation: bounce-down 1s infinite linear;
+    display: inline-block;
+}
