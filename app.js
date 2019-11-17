@@ -1,84 +1,38 @@
-const express = require('express')
-const path = require('path')
-const mustacheExpress = require('mustache-express');
-var format = require('date-format');
+var express = require('express')
+var app = express()
 
+//Template Engine
+// var mustacheExpress = require('mustache-express');
+// app.engine('mustache', mustacheExpress());
+// app.set('view engine', 'mustache');
+// app.set('views', __dirname + '/views');
+var cors = require('cors')
+app.use(cors())
+
+//Config Routes
+app.use('/artwork',require('./routes/artwork'));
+app.use('/project',require('./routes/project'));
+app.use('/roomtype',require('./routes/roomtype'));
+app.use('/product',require('./routes/product'));
+
+
+//Start Database
 var mysql = require('mysql');
-
-
-
-const app = express()
-const fs = require('fs');
-
 var connection = mysql.createConnection({
   host     : 'rm-wz9147un8a8u1q73t7o.mysql.rds.aliyuncs.com',
   user     : 'blacknova',
   password : 'Apptisan123',
   database : 'blacknova'
 });
+global.connection = connection;
 
+//Body Parser
+var bodyParser = require('body-parser');
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+
+//Other settings
 app.use(express.static('public'))
-app.engine('mustache', mustacheExpress());
-app.set('view engine', 'mustache');
-app.set('views', __dirname + '/views');
-
-
-
-
-rawdata = fs.readFileSync('data.json');
-data = JSON.parse(rawdata);
-
-
-app.get('/artworks', function (req, res) {
-
-  connection.query('SELECT * from artwork', function (error, results, fields) {
-    if (error) throw error;
-    var artworks =[];
-    for (i = 0; i < results.length; i++) {
-      results[i].changedate = format("dd.MM.yyyy",results[i].changedate);
-      artworks.push(results[i]);
-    }
-  res.render('artworks',{"artworks":artworks});
-  });
-
-})//get all..
-app.get('/artwork/:id',function (req, res) {
-  connection.query('SELECT * from artwork where id ='+req.params.id, function (error, results, fields) {
-    if (error) throw error;
-    var artwork = results[0];
-
-    res.render('single-artwork',{"artwork":artwork});
-  });
-})//get one artwork
-app.delete('/artwork/:id',function (req, res) {
-  connection.query('delete from artwork where id ='+req.params.id, function (error, results, fields) {
-    if (error) {throw error;}
-    res.send("success");
-  });
-
-
-})//add an artwork
-app.post('/artwork/',function (req, res) {
-  connection.query('insert into artwork(name,product,protocol,changedate,img) values( CONCAT("Artwork ",CEILING(RAND()*900+100)),"a product","cccc","2019-12-1","/images/pic1.jpg");', function (error, results, fields) {
-    if (error) {throw error;}
-    res.send("success");
-  });
-
-
-})//update an artwork
-app.put('/artwork/',function (req, res) {
-  connection.query('insert into artwork(name,product,protocol,changedate,img) values( CONCAT("Artwork ",CEILING(RAND()*900+100)),"a product","cccc","2019-12-1","/images/pic1.jpg");', function (error, results, fields) {
-    if (error) {throw error;}
-    res.send("success");
-  });
-
-
-})//update an artwork
-
-
-
-
-
-
-
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
+
+
