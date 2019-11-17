@@ -6,10 +6,15 @@ var app = express()
 // app.engine('mustache', mustacheExpress());
 // app.set('view engine', 'mustache');
 // app.set('views', __dirname + '/views');
+var cors = require('cors')
+app.use(cors())
 
 //Config Routes
-var artwork = require('./routes/artwork');
-app.use('/artwork',artwork);
+app.use('/artwork',require('./routes/artwork'));
+app.use('/project',require('./routes/project'));
+app.use('/roomtype',require('./routes/roomtype'));
+app.use('/product',require('./routes/product'));
+
 
 //Start Database
 var mysql = require('mysql');
@@ -29,3 +34,5 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 //Other settings
 app.use(express.static('public'))
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
+
+
