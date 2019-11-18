@@ -9,14 +9,14 @@ router.get('/api', function (req, res) {
         res.send(results);
     });
 
-})//get all..
+})
 router.get('/api/:id',function (req, res) {
     connection.query('SELECT * from project where id ='+req.params.id, function (error, results, fields) {
         if (error) throw error;
 
         res.send(results);
     });
-})//get one artwork
+})
 router.delete('/api/:id',function (req, res) {
     connection.query('delete from project where id ='+req.params.id, function (error, results, fields) {
         if (error) {throw error;}
@@ -24,7 +24,7 @@ router.delete('/api/:id',function (req, res) {
     });
 
 
-})//add an artwork
+})
 router.put('/api/:id',function (req, res) {
 
 
@@ -45,7 +45,7 @@ router.put('/api/:id',function (req, res) {
     });
 
 
-})//update an project
+})
 router.post('/api',function (req, res) {
 
     var str = 'insert into project(name, customer_name, category, country, description, num_room, hotel_brand, order_num) values(?,?,?,?,?,?,?,?);';
@@ -63,7 +63,7 @@ router.post('/api',function (req, res) {
     });
 
 
-})//add a project
+})
 
 
 
