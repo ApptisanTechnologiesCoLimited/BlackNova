@@ -30,7 +30,7 @@ router.delete('/api/:id', function (req, res) {
 })
 router.put('/api/:id', function (req, res) {
 
-    var str = "update user set title = ?, first_name=?, last_name=?,country=?, city=?, preferred_currency=?, email=?, phone=?, password=?, subscribed=?, role=? where id =?";
+    var str = "update user set title = ?, first_name=?, last_name=?,country=?, city=?, preferred_currency=?, email=?, phone=?, password=?, market=?, dealer=?, brand=?, sales=?, engineers=?, subscribed=?, role=? where id =?";
     var data = [
         req.body.title,
         req.body.first_name,
@@ -41,6 +41,11 @@ router.put('/api/:id', function (req, res) {
         req.body.email,
         req.body.phone,
         req.body.password,
+        req.body.market,
+        req.body.dealer,
+        req.body.brand,
+        req.body.sales,
+        req.body.engineers,
         req.body.subscribed,
         req.body.role,
         req.params.id];
@@ -55,7 +60,7 @@ router.put('/api/:id', function (req, res) {
 
 })
 router.post('/api', function (req, res) {
-    var sql = 'insert into user(title, first_name, last_name,country, city, preferred_currency, email, phone, password,subscribed,role) values(?,?,?,?,?,?,?,?,?,?,?);';
+    var sql = 'insert into user(title, first_name, last_name,country, city, preferred_currency, email, phone, password,market, dealer, brand, sales, engineers,subscribed,role) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);';
     var data = [
         req.body.title,
         req.body.first_name,
@@ -66,6 +71,11 @@ router.post('/api', function (req, res) {
         req.body.email,
         req.body.phone,
         req.body.password,
+        req.body.market,
+        req.body.dealer,
+        req.body.brand,
+        req.body.sales,
+        req.body.engineers,
         req.body.subscribed,
         req.body.role
     ]
