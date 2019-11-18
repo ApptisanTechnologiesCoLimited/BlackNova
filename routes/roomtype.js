@@ -1,33 +1,24 @@
 var express = require('express');
 var router = express.Router();
-var format = require('date-format');
 
 //API Methods
 router.get('/api', function (req, res) {
 
-    connection.query('SELECT * from artwork', function (error, results, fields) {
+    connection.query('SELECT * from roomtype', function (error, results, fields) {
         if (error) throw error;
-        var artworks =[];
-        for (i = 0; i < results.length; i++) {
-            results[i].changedate = format("dd.MM.yyyy",results[i].changedate);
-            artworks.push(results[i]);
-        }
-        res.send(artworks);
+        res.send(results);
     });
 
 })//get all..
 router.get('/api/:id',function (req, res) {
-    connection.query('SELECT * from artwork where id ='+req.params.id, function (error, results, fields) {
+    connection.query('SELECT * from roomtype where id ='+req.params.id, function (error, results, fields) {
         if (error) throw error;
-        var artwork = results[0];
-
-        res.send(artwork);
+        res.send(results);
     });
 })//get one artwork
 router.delete('/api/:id',function (req, res) {
-    connection.query('delete from artwork where id ='+req.params.id, function (error, results, fields) {
+    connection.query('delete from roomtype where id ='+req.params.id, function (error, results, fields) {
         if (error) {throw error;}
-        console.log(results);
         res.send(results);
     });
 
@@ -35,9 +26,10 @@ router.delete('/api/:id',function (req, res) {
 })//add an artwork
 router.put('/api/:id',function (req, res) {
 
-    var str = "update artwork set name = '"+req.body.name+"', protocol = '"+req.body.protocol+"' where id = "+req.params.id;
+    var str = "update roomtype set name = ? where id =?";
+    var data = [req.body.name,req.params.id];
 
-    connection.query(str, function (error, results, fields) {
+    connection.query(str,data, function (error, results, fields) {
         if (error) {throw error;}
         res.send(results);
     });
@@ -45,7 +37,11 @@ router.put('/api/:id',function (req, res) {
 
 })//update an artwork
 router.post('/api',function (req, res) {
-    connection.query('insert into artwork(name,product,protocol,changedate,img) values( CONCAT("Artwork ",CEILING(RAND()*900+100)),"a product","cccc","2019-12-1","/images/pic1.jpg");', function (error, results, fields) {
+    var sql = 'insert into roomtype(name) values(?);';
+    var data =[
+        req.body.name
+    ]
+    connection.query(sql,data, function (error, results, fields) {
         if (error) {throw error;}
         res.send(results);
     });
