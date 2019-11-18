@@ -1,33 +1,24 @@
 var express = require('express');
 var router = express.Router();
-var format = require('date-format');
 
 //API Methods
 router.get('/api', function (req, res) {
 
     connection.query('SELECT * from artwork', function (error, results, fields) {
         if (error) throw error;
-        var artworks =[];
-        for (i = 0; i < results.length; i++) {
-            results[i].changedate = format("dd.MM.yyyy",results[i].changedate);
-            artworks.push(results[i]);
-        }
-        res.send(artworks);
+        res.send(results);
     });
 
 })//get all..
 router.get('/api/:id',function (req, res) {
     connection.query('SELECT * from artwork where id ='+req.params.id, function (error, results, fields) {
         if (error) throw error;
-        var artwork = results[0];
-
-        res.send(artwork);
+       res.send(results);
     });
 })//get one artwork
 router.delete('/api/:id',function (req, res) {
     connection.query('delete from artwork where id ='+req.params.id, function (error, results, fields) {
         if (error) {throw error;}
-        console.log(results);
         res.send(results);
     });
 

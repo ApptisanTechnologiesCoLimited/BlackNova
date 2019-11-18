@@ -9,11 +9,7 @@ var app = express()
 var cors = require('cors')
 app.use(cors())
 
-//Config Routes
-app.use('/artwork',require('./routes/artwork'));
-app.use('/project',require('./routes/project'));
-app.use('/roomtype',require('./routes/roomtype'));
-app.use('/product',require('./routes/product'));
+
 
 
 //Start Database
@@ -31,8 +27,18 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
+
 //Other settings
 app.use(express.static('public'))
+
+//Config Routes
+app.use('/artwork',require('./routes/artwork'));
+app.use('/project',require('./routes/project'));
+app.use('/roomtype',require('./routes/roomtype'));
+app.use('/product',require('./routes/product'));
+
+
+//Server Starts
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
 
 
