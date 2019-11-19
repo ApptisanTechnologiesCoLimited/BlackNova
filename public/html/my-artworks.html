@@ -98,10 +98,19 @@
                         <div class="scroll-wrapper">
                             <div class="scrollbar-dynamic">
                                 <table class="table list-box">
-                                  <tr v-for="(i, index) in info" @click='zan(index)' :key="index">
+                                    <tr>
+                                        <td>Name</td>
+                                        <td class="text-center w30">Latest change</td>
+                                    </tr> 
+                                    <tr>
+                                        <td>My Product</td>
+                                        <td class="text-center w30">-12-11-2019</td>
+                                    </tr> 
+                                  
+                                  <!-- <tr v-for="(i, index) in info" @click='zan(index)' :key="index">
                                       <td>{{ i.name }}</td>
                                       <td class="text-center w30">{{ i.changedate }}</td>
-                                  </tr>
+                                  </tr> -->
 
 
                                 </table>
