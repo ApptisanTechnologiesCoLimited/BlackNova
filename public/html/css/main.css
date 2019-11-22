@@ -94,12 +94,16 @@ hr{
     padding: 20px;
 }
 .prl5{
-    padding-right:5px!important;
+    padding-right:5px!important
     padding-left:5px!important;
 }
 .prl7{
     padding-right:7px!important;
     padding-left:7px!important;
+}
+.prl15{
+    padding-right:15px!important;
+    padding-left:15px!important;
 }
 .prl30{
     padding-right:30px;
@@ -217,6 +221,7 @@ hr{
 .form-horizontal .control-label{
     text-align: left;
     font-weight:400;
+    padding: 7px 0 7px 15px;
 }
 .form-control{
     border-radius:0;
@@ -544,4 +549,26 @@ tr.active,
 .animate-bounce-down{
     animation: bounce-down 1s infinite linear;
     display: inline-block;
+}
+.ystep-container{
+    display: none!important;
+}
+select.form-control {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.sel::after {
+    content: "\e252";
+    font-family: 'Glyphicons Halflings';
+    display: inline-block;
+    font-size: 10px;
+    position: absolute;
+    right: 25px;
+    top: 11px;
+    color: #ccc;
+    pointer-events: none;
+}
+.bdred{
+    border-color:red;
 }
