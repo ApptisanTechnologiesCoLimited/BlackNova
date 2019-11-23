@@ -28,12 +28,13 @@ router.delete('/api/:id',function (req, res) {
 router.put('/api/:id',function (req, res) {
 
 
-    var str = "update project set name = ?, customer_name = ?, category = ?, country = ?, description = ?, num_room =?, hotel_brand = ?, order_num =? where id = ?";
+    var str = "update project set name = ?, customer_name = ?, category = ?, country = ?, city=?, description = ?, num_room =?, hotel_brand = ?, order_num =? where id = ?";
     var data = [req.body.name,
                 req.body.customer_name,
                 req.body.category,
                 req.body.country,
-                req.body.desc,
+                req.body.city,
+                req.body.description,
                 req.body.num_room,
                 req.body.hotel_brand,
                 req.body.order_num,
@@ -48,12 +49,13 @@ router.put('/api/:id',function (req, res) {
 })
 router.post('/api',function (req, res) {
 
-    var str = 'insert into project(name, customer_name, category, country, description, num_room, hotel_brand, order_num) values(?,?,?,?,?,?,?,?);';
+    var str = 'insert into project(name, customer_name, category, country, city, description, num_room, hotel_brand, order_num) values(?,?,?,?,?,?,?,?,?);';
     var data = [req.body.name,
         req.body.customer_name,
         req.body.category,
         req.body.country,
-        req.body.desc,
+        req.body.city,
+        req.body.description,
         req.body.num_room,
         req.body.hotel_brand,
         req.body.order_num];
