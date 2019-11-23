@@ -3,16 +3,11 @@ var router = express.Router();
 var format = require('date-format');
 
 //API Methods
-router.get('/api', function (req, res) {
+router.get('/api/byroomtype/:rid', function (req, res) {
 
-    connection.query('SELECT * from product', function (error, results, fields) {
+    connection.query('SELECT * from product where rid ='+req.params.rid, function (error, results, fields) {
         if (error) throw error;
-        var artworks =[];
-        for (i = 0; i < results.length; i++) {
-            results[i].changedate = format("dd.MM.yyyy",results[i].changedate);
-            artworks.push(results[i]);
-        }
-        res.send(artworks);
+        res.send(results);
     });
 
 })
