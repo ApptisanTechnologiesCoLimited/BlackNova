@@ -30,11 +30,11 @@ router.delete('/api/:id',function (req, res) {
 })
 router.put('/api/:id',function (req, res) {
 
-    var str = "update product set name =?, type=?, artwork=?, quantity=? where id =?";
+    var str = "update product set name =?, type=?, aid=?, quantity=? where id =?";
     var data =[
         req.body.name,
         req.body.type,
-        req.body.artwork,
+        req.body.aid,
         req.body.quantity,
         req.params.id
     ];
@@ -46,12 +46,13 @@ router.put('/api/:id',function (req, res) {
 
 })
 router.post('/api',function (req, res) {
-    var str = "insert into product(name,type,artwork,quantity) values(?,?,?,?)";
+    var str = "insert into product(name,type,aid,quantity,rid) values(?,?,?,?.?)";
     var data =[
         req.body.name,
         req.body.type,
-        req.body.artwork,
-        req.body.quantity
+        req.body.aid,
+        req.body.quantity,
+        req.body.rid,
     ];
     connection.query(str,data, function (error, results, fields) {
         if (error) {throw error;}
