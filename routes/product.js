@@ -46,7 +46,7 @@ router.put('/api/:id',function (req, res) {
 
 })
 router.post('/api',function (req, res) {
-    var str = "insert into product(name,type,aid,quantity,rid) values(?,?,?,?.?)";
+    var str = "insert into product(name,type,aid,quantity,rid) values(?,?,?,?,?)";
     var data =[
         req.body.name,
         req.body.type,
