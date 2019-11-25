@@ -46,12 +46,14 @@ router.put('/api/:id',function (req, res) {
 
 })
 router.post('/api',function (req, res) {
-    var str = "insert into product(name,type,aid,quantity,rid) values(?,?,?,?,?)";
+    var str = "insert into product(name,type,quantity,format, material, aid, rid) values(?,?,?,?,?,?,?)";
     var data =[
         req.body.name,
         req.body.type,
-        req.body.aid,
         req.body.quantity,
+        req.body.format,
+        req.body.material,
+        req.body.aid,
         req.body.rid,
     ];
     connection.query(str,data, function (error, results, fields) {
