@@ -35,6 +35,7 @@ app.use('/project', require('./routes/project'));
 app.use('/roomtype', require('./routes/roomtype'));
 app.use('/product', require('./routes/product'));
 app.use('/user', require('./routes/user'));
+app.use('/step2', require('./routes/step2'));
 
 
 //Server Starts
